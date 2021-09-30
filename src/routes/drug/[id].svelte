@@ -18,6 +18,10 @@
   const drug = $drugs[id];
 </script>
 
+<svelte:head>
+  <title>Drugs | {drug.name}</title>
+</svelte:head>
+
 <div class="flex justify-center pt-24 min-h-screen">
   <div class="w-full px-4 md:w-3/4 lg:w-1/2">
     <a href="/list" class="mb-2 block"
@@ -38,8 +42,8 @@
       <h2 class="font-bold text-5xl">{drug.name}</h2>
       <div class="hidden md:block">
         <button
-          on:click={() => alert("This is illegal, stop it!")}
-          class="bg-purple-800 text-white dark:bg-yellow-400 dark:text-black py-3 px-5 rounded-xl shadow font-semibold text-xl"
+          on:click={() => alert("FBI want´s to know your location")}
+          class="bg-purple-800 text-white dark:bg-yellow-400 dark:text-black py-3 px-5 rounded-xl shadow font-semibold text-xl ring-purple-800/50 dark:ring-yellow-400/50 hover:ring-4 focus:ring-2"
           >Buy</button
         >
       </div>
@@ -55,8 +59,8 @@
 
 <div class="md:hidden fixed bottom-0 right-0 p-10">
   <button
-    on:click={() => alert("This is illegal, stop it!")}
-    class="bg-purple-800 text-white dark:bg-yellow-400 dark:text-black py-3 px-5 rounded-xl shadow font-semibold text-xl"
+    on:click={() => alert("FBI want´s to know your location")}
+    class="bg-purple-800 text-white dark:bg-yellow-400 dark:text-black py-3 px-5 rounded-xl shadow font-semibold text-xl ring-purple-800/50 dark:ring-yellow-400/50 hover:ring-4 focus:ring-2"
     >Buy</button
   >
 </div>

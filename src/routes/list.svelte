@@ -29,6 +29,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Drugs</title>
+</svelte:head>
+
 <div class="flex justify-center py-24 min-h-screen">
   <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mx-4">
     {#each drugs_expand as drug, id}
@@ -47,7 +51,7 @@
             {#if drug.expand}
               <button
                 on:click={collapse}
-                class="bg-red-500 p-1 rounded-full shadow"
+                class="bg-red-500 p-1 rounded-full shadow hover:ring-4 focus:ring-2 ring-red-500/50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -70,13 +74,13 @@
 
             <a
               href={`/drug/${id}`}
-              class="bg-yellow-400 dark:bg-purple-800 px-8 py-2 rounded-xl shadow text-center"
+              class="bg-yellow-400 dark:bg-purple-800 px-8 py-2 rounded-xl shadow text-center ring-yellow-400/50 hover:ring-4 focus:ring-2 dark:ring-purple-800/50"
               >Buy</a
             >
           {:else}
             <button
               on:click={() => expand(id)}
-              class="bg-yellow-400 dark:bg-purple-800 px-8 py-2 rounded-xl shadow"
+              class="bg-yellow-400 dark:bg-purple-800 px-8 py-2 rounded-xl shadow ring-yellow-400/50 hover:ring-4 focus:ring-2 dark:ring-purple-800/50"
               >More</button
             >
           {/if}
